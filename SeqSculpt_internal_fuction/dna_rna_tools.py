@@ -1,6 +1,3 @@
-COMPLEMENT_DICT = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C', 'U': 'A','a': 't', 't': 'a', 'c': 'g', 'g': 'c', 'u': 'a' }
-
-
 def transcribe(sequence):
     sequence = sequence.replace('T', 'U').replace('t', 'u')
     return sequence
@@ -38,7 +35,6 @@ def reverse_complement(sequence):
 
     """
     return reverse(complement(sequence))
-	
 
 def run_dna_rna_tools(sequence, procedure):
     """
@@ -61,12 +57,3 @@ def run_dna_rna_tools(sequence, procedure):
         return "Error. Available procedures: transcribe, reverse, complement, reverse_complement."
     result = procedures[procedure](sequence)
     return result
-
-def main():
-    sequence = input("Enter DNA or RNA sequence: ")
-    procedure = input("Enter the name of the procedure (transcribe, reverse, complement, reverse_complement): ")
-    result = run_dna_rna_tools(sequence, procedure)
-    print("Result:", result)
-
-if __name__ == "__main__":
-    main()
